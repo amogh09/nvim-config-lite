@@ -22,6 +22,8 @@ function! PackInit() abort
   call minpac#add('fatih/vim-go')
   call minpac#add('tpope/vim-eunuch')
   call minpac#add('preservim/nerdtree')
+  call minpac#add('morhetz/gruvbox')
+  call minpac#add('tomasr/molokai')
 endfunction
 
 command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
@@ -63,3 +65,8 @@ nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd!<CR>
 
 " Mappings for Go
 autocmd FileType go nnoremap <buffer> <leader>gc :GoCallers<CR>
+
+" Prevent nesting of neovim instances
+if has('nvim') && executable('nvr')
+  let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+endif
