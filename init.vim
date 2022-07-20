@@ -24,6 +24,7 @@ function! PackInit() abort
   call minpac#add('preservim/nerdtree')
   call minpac#add('morhetz/gruvbox')
   call minpac#add('tomasr/molokai')
+  call minpac#add('tpope/vim-commentary')
 endfunction
 
 command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
