@@ -15,7 +15,7 @@ vim.keymap.set('n', '<M-j>', '<c-w>j')
 vim.keymap.set('n', '<M-h>', '<c-w>h')
 
 vim.keymap.set('n', '<C-p>', ':<C-u>FZF<CR>') -- CTRL-p to trigger fzf
-vim.keymap.set('n', 'qc', ':cclose<cr>', { noremap = true }) -- Close quickfix list
+vim.keymap.set('n', 'cq', ':cclose<cr>', { noremap = true }) -- Close quickfix list
 
 vim.keymap.set('t', '<leader><c-r>', '<c-\\><c-n>pa') -- Paste in terminal mode
 
