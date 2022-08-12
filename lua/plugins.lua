@@ -15,5 +15,7 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'tmsvg/pear-tree' -- Automatic pairing of brackets and quotes
-  use 'simrat39/symbols-outline.nvim' -- Symbol tree
+  use { 'simrat39/symbols-outline.nvim', commit = '15ae99c27360ab42e931be127d130611375307d5' } -- Symbol tree
+  use 'tpope/vim-fugitive' -- Git Plugin
+  use 'airblade/vim-gitgutter' -- Git Plugin for showing diffs in buffer
 end)

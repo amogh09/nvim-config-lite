@@ -28,7 +28,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 	vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
-	vim.keymap.set('n', 'ff', vim.lsp.buf.workspace_symbol, bufopts)
+	vim.keymap.set('n', '<space>s', vim.lsp.buf.workspace_symbol, bufopts)
 	vim.keymap.set('n', '<leader>c', vim.lsp.buf.incoming_calls, bufopts)
 
 	-- Format before writing 
@@ -37,7 +37,6 @@ local on_attach = function(client, bufnr)
 		callback = vim.lsp.buf.formatting,
 	})
 end
-vim.keymap.set('n', 'fmt', vim.lsp.buf.formatting, bufopts)
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -105,6 +104,8 @@ cmp.setup {
 vim.g.symbols_outline = {
 	highlight_hovered_item = false,
 	auto_preview = false,
+	position = 'left',
+	width = 10,
 }
 vim.keymap.set('n', 'so', ':SymbolsOutlineOpen<cr>', { noremap=true, silent=true, })
 vim.keymap.set('n', 'sc', ':SymbolsOutlineClose<cr>', { noremap=true, silent=true, })
