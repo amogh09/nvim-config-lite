@@ -29,7 +29,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 	vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 	vim.keymap.set('n', '<space>s', vim.lsp.buf.workspace_symbol, bufopts)
-	vim.keymap.set('n', '<leader>c', vim.lsp.buf.incoming_calls, bufopts)
+	vim.keymap.set('n', '<space>c', vim.lsp.buf.incoming_calls, bufopts)
 
 	-- Format before writing 
 	vim.api.nvim_create_autocmd({"BufWritePre"}, {
