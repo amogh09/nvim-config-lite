@@ -33,11 +33,6 @@ vim.cmd([[
 " Colorscheme
 colorscheme PaperColor
 
-" Easy window focus change
-if has('nvim')
-  " For terminal mode
-endif
-
 " Prevent nesting of neovim instances
 if has('nvim') && executable('nvr')
   let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
