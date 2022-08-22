@@ -30,12 +30,6 @@ vim.keymap.set('t', '<M-h>', '<c-\\><c-n><c-w>h')
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>') -- Esc to get out of terminal mode
 
 vim.cmd([[
-" Quickly insert an empty new line without entering insert mode
-
-" FZF
-
-" Esc to exit from terminal
-
 " Colorscheme
 colorscheme PaperColor
 
@@ -43,8 +37,6 @@ colorscheme PaperColor
 if has('nvim')
   " For terminal mode
 endif
-
-" Close buffer without closing its window 
 
 " Prevent nesting of neovim instances
 if has('nvim') && executable('nvr')
