@@ -29,6 +29,9 @@ vim.keymap.set('t', '<M-h>', '<c-\\><c-n><c-w>h')
 
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>') -- Esc to get out of terminal mode
 
+-- Mute search highlighting
+vim.keymap.set('n', '<C-l>', ':<C-u>nohlsearch<CR><C-l>')
+
 vim.cmd([[
 " Colorscheme
 colorscheme PaperColor

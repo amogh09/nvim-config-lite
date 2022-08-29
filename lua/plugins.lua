@@ -18,4 +18,5 @@ return require('packer').startup(function(use)
   use { 'simrat39/symbols-outline.nvim', commit = '15ae99c27360ab42e931be127d130611375307d5' } -- Symbol tree
   use 'tpope/vim-fugitive' -- Git Plugin
   use 'airblade/vim-gitgutter' -- Git Plugin for showing diffs in buffer
+  use 'tpope/vim-surround' -- Makes working with quotes, brackets etc, easier
 end)
