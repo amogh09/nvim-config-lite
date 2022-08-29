@@ -33,6 +33,11 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>') -- Esc to get out of terminal mode
 vim.keymap.set('n', '<C-l>', ':<C-u>nohlsearch<CR><C-l>')
 
 vim.cmd([[
+" Set nvim as preferred editor for Git
+if has('nvim') && executable('nvr')
+	let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+endif
+
 " Colorscheme
 colorscheme PaperColor
 

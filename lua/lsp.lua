@@ -13,6 +13,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, bufopts)
 	vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts)
 	vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, bufopts)
+	vim.keymap.set('n', '<space>ds', vim.diagnostic.setqflist, bufopts)
 	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -51,7 +52,7 @@ lspconfig.gopls.setup {
 	on_attach = on_attach,
 	settings = {
 		gopls = {
-			buildFlags = {"-tags=unit,windows,integration,functional,linux"},
+			buildFlags = {"-tags=unit,functional,linux"},
 		}
 	}
 }
