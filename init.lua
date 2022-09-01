@@ -3,7 +3,7 @@ vim.opt.number = true
 vim.opt.encoding = "utf-8"
 vim.opt.tabstop=4
 vim.opt.shiftwidth=4
-vim.opt.colorcolumn="100" -- Marker at 100 col width 
+vim.opt.colorcolumn="100" -- Marker at 100 col width
 vim.opt.updatetime=200 -- Decrease update time to make vim gutter update faster
 
 -- Newline in normal mode
@@ -54,6 +54,12 @@ vim.api.nvim_create_autocmd(
 	"FileType",
 	{ pattern = { "qf" }, command = [[nnoremap <buffer><silent> q :close<CR>]] }
 )
+
+-- Remove trailing whitespace on save
+vim.api.nvim_create_autocmd( "BufWritePre", {
+	pattern = { "*.py", "*.lua", "*.zshrc" },
+	command = [[ :%s/\s\+$//e ]],
+})
 
 -- Check if file exists
 function file_exists(file)
