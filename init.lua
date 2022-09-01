@@ -3,6 +3,8 @@ vim.opt.number = true
 vim.opt.encoding = "utf-8"
 vim.opt.tabstop=4
 vim.opt.shiftwidth=4
+vim.opt.colorcolumn="100" -- Marker at 100 col width 
+vim.opt.updatetime=200 -- Decrease update time to make vim gutter update faster
 
 -- Newline in normal mode
 vim.keymap.set('n', '<Leader>o', 'o<Esc>')
