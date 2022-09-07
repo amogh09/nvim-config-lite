@@ -19,4 +19,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive' -- Git Plugin
   use 'airblade/vim-gitgutter' -- Git Plugin for showing diffs in buffer
   use 'tpope/vim-surround' -- Makes working with quotes, brackets etc, easier
+  use 'folke/tokyonight.nvim' -- Color scheme
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Better code highlighting with treesitter
 end)
