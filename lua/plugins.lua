@@ -20,6 +20,12 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter' -- Git Plugin for showing diffs in buffer
   use 'tpope/vim-surround' -- Makes working with quotes, brackets etc, easier
   use 'folke/tokyonight.nvim' -- Color scheme
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Better code highlighting with treesitter
+
+  -- treesitter for better syntax highlighting
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
+
   use 'ryanoasis/vim-devicons' -- Pretty icons for NERDTree etc.
 end)
