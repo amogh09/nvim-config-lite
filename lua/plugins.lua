@@ -21,4 +21,5 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround' -- Makes working with quotes, brackets etc, easier
   use 'folke/tokyonight.nvim' -- Color scheme
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Better code highlighting with treesitter
+  use 'ryanoasis/vim-devicons' -- Pretty icons for NERDTree etc.
 end)
