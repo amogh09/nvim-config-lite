@@ -42,7 +42,7 @@ if has('nvim') && executable('nvr')
 endif
 
 " Colorscheme
-colorscheme tokyonight
+silent! colorscheme tokyonight
 
 " Prevent nesting of neovim instances
 if has('nvim') && executable('nvr')
