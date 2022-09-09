@@ -32,7 +32,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>s', vim.lsp.buf.workspace_symbol, bufopts)
 	vim.keymap.set('n', '<space>ic', vim.lsp.buf.incoming_calls, bufopts)
 
-	-- Format before writing 
+	-- Format before writing
 	vim.api.nvim_create_autocmd({"BufWritePre"}, {
 		pattern = {"*"},
 		callback = vim.lsp.buf.formatting_sync,
@@ -108,5 +108,4 @@ vim.g.symbols_outline = {
 	position = 'left',
 	width = 10,
 }
-vim.keymap.set('n', 'so', ':SymbolsOutlineOpen<cr>', { noremap=true, silent=true, })
-vim.keymap.set('n', 'sc', ':SymbolsOutlineClose<cr>', { noremap=true, silent=true, })
+vim.keymap.set('n', '<space>x', ':SymbolsOutline<cr>', { noremap=true, silent=true, })
