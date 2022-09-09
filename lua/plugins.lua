@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter' -- Git Plugin for showing diffs in buffer
   use 'tpope/vim-surround' -- Makes working with quotes, brackets etc, easier
   use 'folke/tokyonight.nvim' -- Color scheme
+  use 'mfussenegger/nvim-jdtls' -- Some extensions for Java LSP
 
   -- treesitter for better syntax highlighting
   use {
