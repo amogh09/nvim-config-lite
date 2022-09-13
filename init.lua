@@ -95,3 +95,8 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 -- Setup plugins
 require('plugins') -- packer
 require('lsp') -- Setup LSP
+
+-- Treesitter
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = {"go"}
+}
