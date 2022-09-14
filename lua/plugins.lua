@@ -29,4 +29,5 @@ return require('packer').startup(function(use)
   }
 
   use 'ryanoasis/vim-devicons' -- Pretty icons for NERDTree etc.
+  use 'editorconfig/editorconfig-vim' -- Editorconfig plugin
 end)
