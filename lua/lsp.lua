@@ -71,3 +71,7 @@ vim.g.symbols_outline = {
 	width = 10,
 }
 vim.keymap.set('n', '<space>x', ':SymbolsOutline<cr>', { noremap=true, silent=true, })
+
+-- NERDTree toggle
+vim.keymap.set('n', '<space>nt', ':NERDTreeToggle<CR>', { noremap=true, silent=true })
+vim.keymap.set('n', '<space>nf', ':NERDTreeFind<CR>', { noremap=true, silent=true })

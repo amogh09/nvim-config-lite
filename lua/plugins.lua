@@ -31,4 +31,5 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons' -- Pretty icons for NERDTree etc.
   use 'editorconfig/editorconfig-vim' -- Editorconfig plugin
   use 'tpope/vim-obsession' -- Plugin to manage vim sessions
+  use 'klen/nvim-test' -- For executing tests
 end)

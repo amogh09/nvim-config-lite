@@ -100,3 +100,6 @@ require('lsp') -- Setup LSP
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {"go"}
 }
+
+-- nvim-test plugin
+require("nvim-test").setup{}
