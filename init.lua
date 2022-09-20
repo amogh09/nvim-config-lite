@@ -102,4 +102,4 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- nvim-test plugin
-require("nvim-test").setup{}
+require('setup_nvim_test')
