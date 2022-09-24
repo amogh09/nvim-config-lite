@@ -14,7 +14,7 @@ lspconfig.gopls.setup {
 	on_attach = on_attach,
 	settings = {
 		gopls = {
-			buildFlags = {"-tags=unit,functional,linux"},
+			buildFlags = {"-tags=unit,integration,functional,linux"},
 		}
 	}
 }

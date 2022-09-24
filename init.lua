@@ -7,6 +7,9 @@ vim.opt.colorcolumn="100" -- Marker at 100 col width
 vim.opt.updatetime=200 -- Decrease update time to make vim gutter update faster
 vim.opt.foldenable=false -- Don't fold by default
 
+vim.opt.spell=true -- Enable built-in spell-checker
+vim.cmd[[au TermOpen * setlocal nospell]] -- Disable spell-checker in terminal mode
+
 -- Newline in normal mode
 vim.keymap.set('n', '<Leader>o', 'o<Esc>')
 vim.keymap.set('n', '<Leader>O', 'O<Esc>')
