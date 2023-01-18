@@ -7,7 +7,7 @@ vim.opt.colorcolumn="100" -- Marker at 100 col width
 vim.opt.updatetime=200 -- Decrease update time to make vim gutter update faster
 vim.opt.foldenable=false -- Don't fold by default
 
-vim.opt.spell=true -- Enable built-in spell-checker
+vim.opt.spell=false -- Enable built-in spell-checker
 vim.cmd[[au TermOpen * setlocal nospell]] -- Disable spell-checker in terminal mode
 
 -- Newline in normal mode
@@ -34,6 +34,10 @@ vim.keymap.set('t', '<M-j>', '<c-\\><c-n><c-w>j')
 vim.keymap.set('t', '<M-h>', '<c-\\><c-n><c-w>h')
 
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>') -- Esc to get out of terminal mode
+
+-- Working with tabs
+vim.keymap.set('n', ']g', ':tabnext<CR>')
+vim.keymap.set('n', '[g', ':tabprevious<CR>')
 
 -- Mute search highlighting
 vim.keymap.set('n', '<C-l>', ':<C-u>nohlsearch<CR><C-l>')
