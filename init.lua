@@ -38,6 +38,8 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>') -- Esc to get out of terminal mode
 -- Working with tabs
 vim.keymap.set('n', '<M-]>', ':tabnext<CR>')
 vim.keymap.set('n', '<M-[>', ':tabprevious<CR>')
+vim.keymap.set('t', '<M-]>', '<c-\\><c-n>:tabnext<CR>')
+vim.keymap.set('t', '<M-[>', '<c-\\><c-n>:tabprevious<CR>')
 
 -- Mute search highlighting
 vim.keymap.set('n', '<C-l>', ':<C-u>nohlsearch<CR><C-l>')
