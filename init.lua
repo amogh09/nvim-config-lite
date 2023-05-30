@@ -129,3 +129,4 @@ vim.keymap.set('n', '<space>l', ':TestLast<CR>')
 
 -- nvim-test plugin
 require('setup_nvim_test')
+
