@@ -107,7 +107,7 @@ require('lsp') -- Setup LSP
 
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {"go"},
+    ensure_installed = {"go", "lua"},
     highlight = {
       enable = true,
       -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
@@ -117,6 +117,15 @@ require'nvim-treesitter.configs'.setup {
       additional_vim_regex_highlighting = false,
     },
 }
+
+-- Taboo
+vim.cmd([[set sessionoptions+=tabpages,globals]])
+
+-- vim-test
+vim.cmd([[let test#strategy = "neovim"]])
+vim.keymap.set('n', '<space>t', ':TestNearest<CR>')
+vim.keymap.set('n', '<space>T', ':TestFile<CR>')
+vim.keymap.set('n', '<space>l', ':TestLast<CR>')
 
 -- nvim-test plugin
 require('setup_nvim_test')

@@ -32,4 +32,6 @@ return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim' -- Editorconfig plugin
   use 'tpope/vim-obsession' -- Plugin to manage vim sessions
   use 'klen/nvim-test' -- For executing tests
+  use 'gcmt/taboo.vim' -- Tabs with names
+  use 'vim-test/vim-test'
 end)
