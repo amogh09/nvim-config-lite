@@ -1,6 +1,7 @@
 return require('packer').startup(function(use)
   use 'tpope/vim-unimpaired'
   use 'junegunn/fzf'
+  use 'junegunn/fzf.vim'
   use 'tpope/vim-dispatch'
   use 'vim-airline/vim-airline'
   use 'NLKNguyen/papercolor-theme'

@@ -24,6 +24,12 @@ lspconfig.gopls.setup {
 	}
 }
 
+-- Setup ruby
+require'lspconfig'.solargraph.setup{
+	capabilities = capabilities,
+	on_attach = on_attach,
+}
+
 -- luasnip setup
 local luasnip = require 'luasnip'
 
@@ -66,6 +72,18 @@ cmp.setup {
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' },
 	},
+}
+
+-- JSON LSP setup
+require'lspconfig'.jsonls.setup{
+    capabilities = capabilities,
+	on_attach = on_attach,
+}
+
+-- bash LSP setup
+require'lspconfig'.bashls.setup{
+    capabilities = capabilities,
+	on_attach = on_attach,
 }
 
 -- simrat39/symbols-outline.nvim setup

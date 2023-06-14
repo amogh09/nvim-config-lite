@@ -107,7 +107,7 @@ require('lsp') -- Setup LSP
 
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {"go", "lua"},
+    ensure_installed = {"go", "lua", "json"},
     highlight = {
       enable = true,
       -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
@@ -126,6 +126,11 @@ vim.cmd([[let test#strategy = "neovim"]])
 vim.keymap.set('n', '<space>t', ':TestNearest<CR>')
 vim.keymap.set('n', '<space>T', ':TestFile<CR>')
 vim.keymap.set('n', '<space>l', ':TestLast<CR>')
+
+-- Use treesitter for folding
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.wo.foldenable = false
 
 -- nvim-test plugin
 require('setup_nvim_test')
