@@ -3,11 +3,11 @@ vim.opt.number = true
 vim.opt.encoding = "utf-8"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.colorcolumn = "100"               -- Marker at 100 col width
-vim.opt.updatetime = 200                  -- Decrease update time to make vim gutter update faster
-vim.opt.foldenable = false                -- Don't fold by default
+vim.opt.colorcolumn = "100"                -- Marker at 100 col width
+vim.opt.updatetime = 200                   -- Decrease update time to make vim gutter update faster
+vim.opt.foldenable = false                 -- Don't fold by default
 
-vim.opt.spell = false                     -- Enable built-in spell-checker
+vim.opt.spell = false                      -- Enable built-in spell-checker
 vim.cmd [[au TermOpen * setlocal nospell]] -- Disable spell-checker in terminal mode
 
 -- Newline in normal mode
@@ -72,7 +72,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- Check if file exists
-function file_exists(file)
+local function file_exists(file)
     local f = io.open(file, "rb")
     if f then f:close() end
     return f ~= nil
@@ -80,7 +80,7 @@ end
 
 -- get all lines from a file, returns an empty
 -- list/table if the file does not exist
-function lines_from(file)
+local function lines_from(file)
     if not file_exists(file) then return {} end
     local lines = {}
     for line in io.lines(file) do
@@ -90,9 +90,9 @@ function lines_from(file)
 end
 
 -- Add Go header
-function add_go_header(t)
-    home = os.getenv("HOME")
-    file = home .. "/.config/nvim/headers/header.go"
+local function add_go_header(t)
+    local home = os.getenv("HOME")
+    local file = home .. "/.config/nvim/headers/header.go"
     local lines = lines_from(file)
     vim.api.nvim_buf_set_lines(t.buf, 0, 1, false, lines)
 end
