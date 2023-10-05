@@ -24,6 +24,12 @@ lspconfig.gopls.setup {
     }
 }
 
+-- Setup bash LS
+lspconfig.bashls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
 -- Setup Lua LS
 lspconfig.lua_ls.setup {
     capabilities = capabilities,
@@ -59,9 +65,9 @@ lspconfig.lua_ls.setup {
 }
 
 -- Setup ruby
-require'lspconfig'.solargraph.setup{
-	capabilities = capabilities,
-	on_attach = on_attach,
+lspconfig.solargraph.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 -- luasnip setup
@@ -109,15 +115,15 @@ cmp.setup {
 }
 
 -- JSON LSP setup
-require'lspconfig'.jsonls.setup{
+lspconfig.jsonls.setup {
     capabilities = capabilities,
-	on_attach = on_attach,
+    on_attach = on_attach,
 }
 
 -- bash LSP setup
-require'lspconfig'.bashls.setup{
+lspconfig.bashls.setup {
     capabilities = capabilities,
-	on_attach = on_attach,
+    on_attach = on_attach,
 }
 
 -- simrat39/symbols-outline.nvim setup
