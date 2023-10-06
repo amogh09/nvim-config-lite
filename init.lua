@@ -23,11 +23,13 @@ vim.keymap.set('n', '<M-j>', '<c-w>j')
 vim.keymap.set('n', '<M-h>', '<c-w>h')
 
 -- Telescope setup
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<space>ff', builtin.find_files, {})
-vim.keymap.set('n', '<space>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<space>fb', builtin.buffers, {})
-vim.keymap.set('n', '<space>fh', builtin.help_tags, {})
+local success, telescope = pcall(require, "telescope.builtin")
+if success then
+	vim.keymap.set('n', '<space>ff', telescope.find_files, {})
+	vim.keymap.set('n', '<space>fg', telescope.live_grep, {})
+	vim.keymap.set('n', '<space>fb', telescope.buffers, {})
+	vim.keymap.set('n', '<space>fh', telescope.help_tags, {})
+end
 
 vim.keymap.set('n', '<C-p>', ':<C-u>FZF<CR>')                -- CTRL-p to trigger fzf
 vim.keymap.set('n', 'cq', ':cclose<cr>', { noremap = true }) -- Close quickfix list
