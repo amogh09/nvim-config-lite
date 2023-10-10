@@ -48,7 +48,7 @@ end
 
 vim.keymap.set('n', 'cq', ':cclose<cr>', { noremap = true }) -- Close quickfix list
 
-vim.keymap.set('t', '<c-\\><c-r>', '<c-\\><c-n>pa')          -- Paste in terminal mode
+vim.keymap.set('t', '<leader><c-r>', '<c-\\><c-n>pa')        -- Paste in terminal mode
 
 -- Move around windows in terminal mode
 vim.keymap.set('t', '<M-l>', '<c-\\><c-n><c-w>l')
