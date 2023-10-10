@@ -25,6 +25,7 @@ vim.keymap.set('n', '<M-h>', '<c-w>h')
 -- Telescope setup
 local success, telescope = pcall(require, "telescope.builtin")
 if success then
+  local actions = require("telescope.actions")
   vim.keymap.set('n', '<space>p', telescope.find_files, {})
   vim.keymap.set('n', '<space>g', telescope.live_grep, {})
   vim.keymap.set('n', '<space>b', telescope.buffers, {})
@@ -38,8 +39,8 @@ if success then
     defaults = {
       mappings = {
         n = {
-          ["<C-b>"] = "delete_buffer"
-        }
+          ["<C-b>"] = actions.delete_buffer,
+        },
       },
     },
   }
