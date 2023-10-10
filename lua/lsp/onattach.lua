@@ -4,7 +4,7 @@ local on_attach = function(client, bufnr)
 
 	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	local bufopts = { noremap=true, silent=true, buffer=bufnr }
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, bufopts)
 	vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, bufopts)
 	vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts)
@@ -25,7 +25,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>cr', vim.lsp.codelens.refresh, bufopts)
 	vim.keymap.set('n', '<space>ce', vim.lsp.codelens.run, bufopts)
 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<space>f', function()
+	vim.keymap.set('n', '<space>fm', function()
 		vim.lsp.buf.format { async = true }
 	end, opts)
 	vim.keymap.set('n', '<space>s', vim.lsp.buf.workspace_symbol, bufopts)
@@ -33,12 +33,13 @@ local on_attach = function(client, bufnr)
 
 
 	-- Format before writing
-    vim.api.nvim_create_autocmd({"BufWritePre"}, {
-        pattern = {"*.go", "*.hs", "*.js"},
-        callback = function()
-            vim.lsp.buf.format { async = false }
-        end, opts,
-    })
+	vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+		pattern = { "*.go", "*.hs", "*.js" },
+		callback = function()
+			vim.lsp.buf.format { async = false }
+		end,
+		opts,
+	})
 end
 
 return on_attach
