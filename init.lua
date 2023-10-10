@@ -1,5 +1,4 @@
 -- Settings
-vim.g.mapleader = ' '
 vim.opt.number = true
 vim.opt.encoding = "utf-8"
 vim.opt.tabstop = 4
@@ -12,8 +11,8 @@ vim.opt.spell = false                      -- Enable built-in spell-checker
 vim.cmd [[au TermOpen * setlocal nospell]] -- Disable spell-checker in terminal mode
 
 -- Newline in normal mode
-vim.keymap.set('n', '<Leader>o', 'o<Esc>')
-vim.keymap.set('n', '<Leader>O', 'O<Esc>')
+vim.keymap.set('n', '<leader>o', 'o<Esc>')
+vim.keymap.set('n', '<leader>O', 'O<Esc>')
 
 vim.keymap.set('n', '<leader>q', ':bp<bar>sp<bar>bn<bar>bd!<CR>') -- Wipe buffer without closing window
 
@@ -26,10 +25,14 @@ vim.keymap.set('n', '<M-h>', '<c-w>h')
 -- Telescope setup
 local success, telescope = pcall(require, "telescope.builtin")
 if success then
-	vim.keymap.set('n', '<leader>p', telescope.find_files, {})
-	vim.keymap.set('n', '<leader>g', telescope.live_grep, {})
-	vim.keymap.set('n', '<leader>b', telescope.buffers, {})
-	vim.keymap.set('n', '<leader>h', telescope.help_tags, {})
+	vim.keymap.set('n', '<space>p', telescope.find_files, {})
+	vim.keymap.set('n', '<space>g', telescope.live_grep, {})
+	vim.keymap.set('n', '<space>b', telescope.buffers, {})
+	vim.keymap.set('n', '<space>h', telescope.help_tags, {})
+	vim.keymap.set('n', '<space>s', telescope.lsp_dynamic_workspace_symbols, {})
+	vim.keymap.set('n', '<space>y', telescope.lsp_document_symbols, {})
+	vim.keymap.set('n', '<space>ic', telescope.lsp_incoming_calls, {})
+	vim.keymap.set('n', '<space>oc', telescope.lsp_outgoing_calls, {})
 end
 
 vim.keymap.set('n', 'cq', ':cclose<cr>', { noremap = true }) -- Close quickfix list
@@ -133,9 +136,9 @@ vim.cmd([[set sessionoptions+=tabpages,globals]])
 
 -- vim-test
 vim.cmd([[let test#strategy = "neovim"]])
-vim.keymap.set('n', '<leader>t', ':TestNearest<CR>')
-vim.keymap.set('n', '<leader>T', ':TestFile<CR>')
-vim.keymap.set('n', '<leader>l', ':TestLast<CR>')
+vim.keymap.set('n', '<space>t', ':TestNearest<CR>')
+vim.keymap.set('n', '<space>T', ':TestFile<CR>')
+vim.keymap.set('n', '<space>l', ':TestLast<CR>')
 
 -- Use treesitter for folding
 vim.wo.foldmethod = 'expr'
