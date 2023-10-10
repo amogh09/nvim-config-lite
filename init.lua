@@ -1,4 +1,5 @@
 -- Settings
+vim.g.mapleader = ' '
 vim.opt.number = true
 vim.opt.encoding = "utf-8"
 vim.opt.tabstop = 4
@@ -25,16 +26,15 @@ vim.keymap.set('n', '<M-h>', '<c-w>h')
 -- Telescope setup
 local success, telescope = pcall(require, "telescope.builtin")
 if success then
-	vim.keymap.set('n', '<space>ff', telescope.find_files, {})
-	vim.keymap.set('n', '<space>fg', telescope.live_grep, {})
-	vim.keymap.set('n', '<space>fb', telescope.buffers, {})
-	vim.keymap.set('n', '<space>fh', telescope.help_tags, {})
+	vim.keymap.set('n', '<leader>p', telescope.find_files, {})
+	vim.keymap.set('n', '<leader>g', telescope.live_grep, {})
+	vim.keymap.set('n', '<leader>b', telescope.buffers, {})
+	vim.keymap.set('n', '<leader>h', telescope.help_tags, {})
 end
 
-vim.keymap.set('n', '<C-p>', ':<C-u>FZF<CR>')                -- CTRL-p to trigger fzf
 vim.keymap.set('n', 'cq', ':cclose<cr>', { noremap = true }) -- Close quickfix list
 
-vim.keymap.set('t', '<leader><c-r>', '<c-\\><c-n>pa')        -- Paste in terminal mode
+vim.keymap.set('t', '<c-\\><c-r>', '<c-\\><c-n>pa')        -- Paste in terminal mode
 
 -- Move around windows in terminal mode
 vim.keymap.set('t', '<M-l>', '<c-\\><c-n><c-w>l')
@@ -133,9 +133,9 @@ vim.cmd([[set sessionoptions+=tabpages,globals]])
 
 -- vim-test
 vim.cmd([[let test#strategy = "neovim"]])
-vim.keymap.set('n', '<space>t', ':TestNearest<CR>')
-vim.keymap.set('n', '<space>T', ':TestFile<CR>')
-vim.keymap.set('n', '<space>l', ':TestLast<CR>')
+vim.keymap.set('n', '<leader>t', ':TestNearest<CR>')
+vim.keymap.set('n', '<leader>T', ':TestFile<CR>')
+vim.keymap.set('n', '<leader>l', ':TestLast<CR>')
 
 -- Use treesitter for folding
 vim.wo.foldmethod = 'expr'
